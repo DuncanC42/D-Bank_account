@@ -20,3 +20,5 @@ spring:
     hibernate:
       ddl-auto: create-drop
     show-sql: true
+build:
+  version: "1.0"

@@ -11,7 +11,7 @@
     <groupId>bzh.duncan</groupId>
     <artifactId>accounts</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>jar </packaging>
     <name>accounts</name>
     <description>accounts</description>
     <url/>
@@ -87,15 +87,13 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>3.4.4</version>
                 <configuration>
-                    <excludes>
-                        <exclude>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </exclude>
-                    </excludes>
+                    <to>
+                        <image>shi2gami42/d-bank-${project.artifactId}:microservices</image>
+                    </to>
                 </configuration>
             </plugin>
         </plugins>
