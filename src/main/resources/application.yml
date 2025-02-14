@@ -21,4 +21,14 @@ spring:
       ddl-auto: create-drop
     show-sql: true
 build:
-  version: "1.0"
+  version: "1.0.0"
+
+accounts:
+  message: "Welcome to Duncan Cadoret Bank accounts related services"
+  contactDetails:
+    name: "Duncan Cadoret"
+    role: "Software Engineer One day"
+    website: "https://duncan-cadoret.com/"
+  onCallSupport:
+    - (33) 6 12 34 56 78
+    - (33) 6 12 34 56 79

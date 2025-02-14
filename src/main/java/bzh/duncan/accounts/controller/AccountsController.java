@@ -1,6 +1,7 @@
 package bzh.duncan.accounts.controller;
 
 import bzh.duncan.accounts.constants.AccountsConstants;
+import bzh.duncan.accounts.dto.AccountContactInfoDto;
 import bzh.duncan.accounts.dto.CustomerDto;
 import bzh.duncan.accounts.dto.ErrorResponseDto;
 import bzh.duncan.accounts.dto.ResponseDto;
@@ -41,6 +42,9 @@ public class AccountsController {
 
     @Autowired
     private Environment environment;
+
+    @Autowired
+    private AccountContactInfoDto accountContactInfoDto;
 
     @Operation(
             summary = "Create a new account",
@@ -156,6 +160,32 @@ public class AccountsController {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(environment.getProperty("java.version"));
+    }
+
+    @Operation(
+            summary = "Get Contact Info",
+            description = "Get the contact information of the application"
+    )
+    @ApiResponses(
+            value = {
+                    @ApiResponse(
+                            responseCode = "200",
+                            description = "HTTP Status OK"
+                    ),
+                    @ApiResponse(
+                            responseCode = "500",
+                            description = "HTTP Status Internal Server Error",
+                            content = @Content(
+                                    schema = @Schema(implementation = ErrorResponseDto.class)
+                            )
+                    )
+            }
+    )
+    @GetMapping("/contact-info")
+    public ResponseEntity<AccountContactInfoDto> getContactInfo(){
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(accountContactInfoDto);
     }
 
 }
