@@ -1,0 +1,17 @@
+spring:
+  config:
+    activate:
+      on-profile: "prod"
+
+build:
+  version: "1.0.0"
+
+accounts:
+  message: "Welcome to Duncan Cadoret Bank accounts related to Production APIs"
+  contactDetails:
+    name: "Production Support"
+    role: "Support Engineer"
+    website: "https://duncan-cadoret.com/"
+  onCallSupport:
+    - (33) 6 12 34 56 80
+    - (33) 6 12 34 56 81

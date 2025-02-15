@@ -1,0 +1,16 @@
+spring:
+    config:
+        activate:
+            on-profile: "qa"
+
+build:
+  version: "2 .0.0"
+
+accounts:
+  message: "Welcome to Duncan Cadoret Bank accounts related to QA APIs"
+  contactDetails:
+    name: "Madame de la QA"
+    role: "QA Leader"
+    website: "https://google.com/"
+  onCallSupport:
+    - (666) 30 11 22 33
