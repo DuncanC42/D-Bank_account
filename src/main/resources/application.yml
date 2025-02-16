@@ -1,14 +1,10 @@
 server:
   port: 8080
 spring:
+  application:
+      name: "accounts"
   profiles:
-    active:
-      - "qa"
-      - "prod"
-  config:
-    import:
-      - "application_qa.yml"
-      - "application_prod.yml"
+      active: "prod"
   datasource:
     url: jdbc:h2:mem:bankdb
     driver-class-name: org.h2.Driver
@@ -28,16 +24,5 @@ spring:
     hibernate:
       ddl-auto: create-drop
     show-sql: true
-
-build:
-  version: "3.0.0"
-
-accounts:
-  message: "Welcome to Duncan Cadoret Bank accounts related services"
-  contactDetails:
-    name: "Duncan Cadoret"
-    role: "Software Engineer One day"
-    website: "https://duncan-cadoret.com/"
-  onCallSupport:
-    - (33) 6 12 34 56 78
-    - (33) 6 12 34 56 79
+  config:
+    import: "optional:configserver:http://localhost:8071/"
