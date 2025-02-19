@@ -2,25 +2,21 @@ server:
   port: 8080
 spring:
   application:
-      name: "accounts"
+    name: "accounts"
   profiles:
-      active: "prod"
+    active: "prod"
   datasource:
-    url: jdbc:h2:mem:bankdb
-    driver-class-name: org.h2.Driver
-    username: admin
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
     password: ''
   h2:
     console:
       enabled: true
-  api-docs:
-    enabled: true
-  swagger-ui:
-    enabled: true
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     show-sql: true
   config:
     import: "optional:configserver:http://localhost:8071/"
@@ -30,8 +26,8 @@ spring:
     username: "guest"
     password: "guest"
 
-  management:
-    endpoints:
-      web:
-        exposure:
-          include: "*" #exclude all endpoints
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
